@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DISCOVER SIARGAO</title>
   <style>
     * {
@@ -11,7 +12,7 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-    
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,7 +20,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    
+
     section {
       min-height: 100vh;
       padding: 80px 20px 40px;
@@ -28,7 +29,7 @@
       justify-content: center;
       position: relative;
     }
-    
+
     section::before {
       content: '';
       position: absolute;
@@ -39,33 +40,33 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
-    
+
     #home {
       background: url(municipality1.jpg) no-repeat center center;
       background-size: cover;
     }
-    
+
     #about {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(island3.jpg) no-repeat center center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(island3.jpg) no-repeat center center;
       background-size: cover;
     }
-    
+
     #news {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(island2.jpg) no-repeat center center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(island2.jpg) no-repeat center center;
       background-size: cover;
     }
-    
+
     #tourism {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(island.jpg) no-repeat center center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(island.jpg) no-repeat center center;
       background-size: cover;
     }
-    
+
     #contact {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url() no-repeat center center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url() no-repeat center center;
       background-size: cover;
     }
-    
-    
+
+
     .header {
       padding: 20px;
       display: flex;
@@ -80,18 +81,18 @@
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
-    
+
     .header.scrolled {
       padding: 10px 20px;
       background-color: rgba(0, 0, 0, 0.8);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
+
     .logo-container {
       display: flex;
       align-items: center;
     }
-    
+
     .logo-container img {
       width: 60px;
       height: 60px;
@@ -99,8 +100,8 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       margin-right: 15px;
     }
-    
-     
+
+
     .hamburger {
       display: flex;
       flex-direction: column;
@@ -116,9 +117,9 @@
       box-shadow: 0 0 15px rgba(26, 188, 156, 0.6);
       animation: pulse 2s infinite;
     }
-    
+
     .hamburger span {
-      display: block;  
+      display: block;
       width: 100%;
       height: 3px;
       background-color: white;
@@ -126,25 +127,25 @@
       transition: all 0.3s ease;
       margin: 2px 0;
     }
-    
+
     .hamburger.active {
       background-color: rgba(231, 76, 60, 0.8);
       box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
     }
-    
+
     .hamburger.active span:nth-child(1) {
       transform: translateY(10px) rotate(45deg);
     }
-    
+
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
       transform: translateY(-10px) rotate(-45deg);
     }
-    
-    
+
+
     .nav-menu {
       position: fixed;
       top: -350px;
@@ -159,55 +160,55 @@
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
-    
+
     .nav-menu.active {
       top: 0;
     }
-    
+
     .nav-menu ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    
+
     .nav-menu ul li {
       margin: 0;
       opacity: 0;
       transform: translateY(-20px);
       transition: all 0.4s ease;
     }
-    
+
     .nav-menu.active ul li {
       opacity: 1;
       transform: translateY(0);
     }
-    
-    
+
+
     .nav-menu.active ul li:nth-child(1) {
       transition-delay: 0.1s;
     }
-    
+
     .nav-menu.active ul li:nth-child(2) {
       transition-delay: 0.2s;
     }
-    
+
     .nav-menu.active ul li:nth-child(3) {
       transition-delay: 0.3s;
     }
-    
+
     .nav-menu.active ul li:nth-child(4) {
       transition-delay: 0.4s;
     }
-    
+
     .nav-menu.active ul li:nth-child(5) {
       transition-delay: 0.5s;
     }
-    
+
     .nav-menu.active ul li:nth-child(6) {
       transition-delay: 0.6s;
     }
-    
+
     .nav-menu ul li a {
       color: white;
       text-decoration: none;
@@ -218,19 +219,19 @@
       border-radius: 5px;
       transition: all 0.3s ease;
     }
-    
+
     .nav-menu ul li a:hover {
       background-color: rgba(26, 188, 156, 0.2);
       transform: scale(1.05);
       letter-spacing: 1px;
     }
-    
+
     .logout-btn {
       background-color: #e74c3c;
       color: white;
     }
-    
-    
+
+
     .overlay {
       position: fixed;
       top: 0;
@@ -243,19 +244,19 @@
       visibility: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .overlay.active {
       opacity: 1;
       visibility: visible;
     }
-    
-   
+
+
     .section-content {
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
-    
+
     .section-title {
       font-size: 3em;
       margin-bottom: 30px;
@@ -263,7 +264,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .section-title::after {
       content: '';
       position: absolute;
@@ -275,32 +276,32 @@
       background-color: #1abc9c;
       border-radius: 2px;
     }
-    
+
     .section-description {
       font-size: 1.2em;
       max-width: 800px;
       margin: 0 auto 40px;
       line-height: 1.6;
     }
-    
-    
+
+
     .hero-content {
       animation: fadeIn 1s ease;
     }
-    
+
     .hero-title {
       font-size: 3.5em;
       margin-bottom: 20px;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     }
-    
+
     .hero-description {
       font-size: 1.3em;
       max-width: 800px;
       margin: 0 auto 30px;
       line-height: 1.6;
     }
-    
+
     .cta-button {
       display: inline-block;
       background-color: #1abc9c;
@@ -313,13 +314,13 @@
       transition: all 0.3s ease;
       animation: pulse 2s infinite;
     }
-    
+
     .cta-button:hover {
       background-color: #16a085;
       transform: scale(1.05);
     }
-    
-     
+
+
     .feature-list {
       list-style: none;
       padding: 0;
@@ -328,7 +329,7 @@
       gap: 15px;
       margin-bottom: 30px;
     }
-    
+
     .feature-list li {
       font-size: 1.2em;
       padding: 15px;
@@ -337,60 +338,60 @@
       border-radius: 8px;
       border-left: 4px solid #1abc9c;
     }
-    
+
     .feature-list li:hover {
       transform: translateY(-5px);
       background-color: rgba(255, 255, 255, 0.2);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
-    
+
+
     .news-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
-    
+
     .news-card {
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .news-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .news-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-    
+
     .news-content {
       padding: 20px;
     }
-    
+
     .news-date {
       font-size: 0.9em;
       color: #1abc9c;
       margin-bottom: 10px;
     }
-    
+
     .news-title {
       font-size: 1.4em;
       margin-bottom: 15px;
     }
-    
+
     .news-excerpt {
       font-size: 1em;
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.8);
     }
-    
+
     .read-more {
       display: inline-block;
       color: #1abc9c;
@@ -398,19 +399,19 @@
       font-weight: bold;
       transition: all 0.3s ease;
     }
-    
+
     .read-more:hover {
       color: white;
     }
-    
-   
+
+
     .tourism-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
-    
+
     .spot-card {
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -418,34 +419,34 @@
       transition: all 0.3s ease;
       position: relative;
     }
-    
+
     .spot-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .spot-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-    
+
     .spot-content {
       padding: 20px;
     }
-    
+
     .spot-title {
       font-size: 1.4em;
       margin-bottom: 15px;
     }
-    
+
     .spot-description {
       font-size: 1em;
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.8);
     }
-    
-    
+
+
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -453,24 +454,24 @@
       max-width: 600px;
       margin: 0 auto;
     }
-    
+
     .contact-form {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 30px;
       border-radius: 10px;
     }
-    
+
     .form-group {
       margin-bottom: 20px;
     }
-    
+
     .form-label {
       display: block;
       margin-bottom: 8px;
       font-weight: bold;
       text-align: left;
     }
-    
+
     .form-input,
     .form-textarea {
       width: 100%;
@@ -481,18 +482,18 @@
       color: white;
       font-size: 1em;
     }
-    
+
     .form-input:focus,
     .form-textarea:focus {
       outline: 2px solid #1abc9c;
       background-color: rgba(255, 255, 255, 0.3);
     }
-    
+
     .form-textarea {
       resize: vertical;
       min-height: 120px;
     }
-    
+
     .submit-btn {
       background-color: #1abc9c;
       color: white;
@@ -503,18 +504,18 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .submit-btn:hover {
       background-color: #16a085;
       transform: scale(1.05);
     }
-    
+
     .contact-info {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-    
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -524,18 +525,18 @@
       border-radius: 8px;
       transition: all 0.3s ease;
     }
-    
+
     .contact-item:hover {
       background-color: rgba(255, 255, 255, 0.2);
       transform: translateX(10px);
     }
-    
+
     .contact-icon {
       font-size: 1.5em;
       color: #1abc9c;
     }
-    
-    
+
+
     .back-to-top {
       position: fixed;
       bottom: 30px;
@@ -556,100 +557,103 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       z-index: 900;
     }
-    
+
     .back-to-top.active {
       opacity: 1;
       visibility: visible;
     }
-    
+
     .back-to-top:hover {
       background-color: #16a085;
       transform: translateY(-5px);
     }
-    
-   
+
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(50px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     @keyframes pulse {
       0% {
         box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.6);
       }
+
       70% {
         box-shadow: 0 0 0 10px rgba(26, 188, 156, 0);
       }
+
       100% {
         box-shadow: 0 0 0 0 rgba(26, 188, 156, 0);
       }
     }
-    
-   
+
+
     @media screen and (max-width: 768px) {
       .section-title {
         font-size: 2.5em;
       }
-      
+
       .hero-title {
         font-size: 2.5em;
       }
-      
+
       .hero-description,
       .section-description {
         font-size: 1.1em;
       }
-      
+
       .logo-container img {
         width: 50px;
         height: 50px;
       }
-      
+
       .logo-container h2 {
         font-size: 1.2em;
       }
-      
+
       .news-container,
       .tourism-container {
         grid-template-columns: 1fr;
       }
     }
-    
+
     @media screen and (max-width: 480px) {
       .section-title {
         font-size: 2em;
       }
-      
+
       .hero-title {
         font-size: 2em;
       }
-      
+
       .hero-description,
       .section-description {
         font-size: 1em;
       }
-      
+
       .cta-button {
         padding: 12px 24px;
         font-size: 1.1em;
       }
-      
+
       .logo-container img {
         width: 40px;
         height: 40px;
         margin-right: 10px;
       }
-      
+
       .logo-container h2 {
         font-size: 1.1em;
       }
-      
+
       .back-to-top {
         width: 40px;
         height: 40px;
@@ -660,6 +664,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="header">
@@ -667,18 +672,18 @@
       <img src="logo.png" alt="Siargao Logo" />
       <h2>SIARGAO</h2>
     </div>
-    
+
     <div class="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </header>
-  
- 
+
+
   <div class="overlay"></div>
-  
- 
+
+
   <nav class="nav-menu">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -686,25 +691,39 @@
       <li><a href="#news">News</a></li>
       <li><a href="#tourism">Tourism Spots</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#" class="logout-btn">Log Out</a></li>
+      <li><a href="index.html" class="logout-btn" onclick="logout()">Log Out</a></li>
     </ul>
   </nav>
-  
- 
+
+  <script>
+    function logout() {
+      // Clear the login flag from localStorage
+      localStorage.removeItem('isLoggedIn');
+      // Set a flag to show the logout message
+      localStorage.setItem('logoutMessage', 'true');
+      // Redirect to the login page
+      window.location.href = 'index.html';
+    }
+  </script>
+
   <section id="home">
     <div class="section-content hero-content">
       <h1 class="hero-title">Welcome to Municipality of Siargao</h1>
-      <p class="hero-description">Discover the natural beauty, vibrant culture, and warm hospitality that make Siargao a true island paradise. The island is known as the Surfing Capital of the Philippines and offers countless adventures for every visitor.</p>
+      <p class="hero-description">Discover the natural beauty, vibrant culture, and warm hospitality that make Siargao a
+        true island paradise. The island is known as the Surfing Capital of the Philippines and offers countless
+        adventures for every visitor.</p>
       <a href="#tourism" class="cta-button">Explore Siargao</a>
     </div>
   </section>
-  
- 
+
+
   <section id="about">
     <div class="section-content">
       <h2 class="section-title">About Siargao</h2>
-      <p class="section-description">Siargao is a tear-drop shaped island located in the province of Surigao del Norte. Known for its stunning beaches, clear waters, and world-class surf breaks, Siargao has become a popular destination for both local and international tourists.</p>
-      
+      <p class="section-description">Siargao is a tear-drop shaped island located in the province of Surigao del Norte.
+        Known for its stunning beaches, clear waters, and world-class surf breaks, Siargao has become a popular
+        destination for both local and international tourists.</p>
+
       <h3 style="margin-bottom: 20px;">Why Visit Siargao?</h3>
       <ul class="feature-list">
         <li>🏄 World-class surfing destination with the famous Cloud 9 break</li>
@@ -714,156 +733,168 @@
         <li>💚 Friendly locals and laid-back island life</li>
         <li>🌿 Lush mangrove forests and natural rock pools</li>
       </ul>
-      
+
       <a href="#tourism" class="cta-button">See Our Tourist Spots</a>
     </div>
   </section>
-  
-  
+
+
   <section id="news">
     <div class="section-content">
       <h2 class="section-title">Latest News</h2>
-      <p class="section-description">Stay updated with the latest events, announcements, and happenings in Siargao. From festivals to environmental initiatives, find out what's new in our island paradise.</p>
-      
+      <p class="section-description">Stay updated with the latest events, announcements, and happenings in Siargao. From
+        festivals to environmental initiatives, find out what's new in our island paradise.</p>
+
       <div class="news-container">
         <div class="news-card">
           <img src="Annual Siargao Surfing Cup Announced.jpg" alt="News Image" class="news-img">
           <div class="news-content">
             <p class="news-date">May 12, 2025</p>
             <h3 class="news-title">Annual Siargao Surfing Cup Announced</h3>
-            <p class="news-excerpt">The much-awaited international surfing competition returns this August with participants from over 20 countries.</p>
+            <p class="news-excerpt">The much-awaited international surfing competition returns this August with
+              participants from over 20 countries.</p>
             <a href="#" class="read-more">Read More</a>
           </div>
         </div>
-        
+
         <div class="news-card">
           <img src="New Marine Conservation Area Established.jpg" alt="News Image" class="news-img">
           <div class="news-content">
             <p class="news-date">May 5, 2025</p>
             <h3 class="news-title">New Marine Conservation Area Established</h3>
-            <p class="news-excerpt">Local government partners with environmental groups to protect coral reefs around the island.</p>
+            <p class="news-excerpt">Local government partners with environmental groups to protect coral reefs around
+              the island.</p>
             <a href="#" class="read-more">Read More</a>
           </div>
         </div>
-        
+
         <div class="news-card">
           <img src="Cultural Festival Celebrates Local Heritage.jpg" alt="News Image" class="news-img">
           <div class="news-content">
             <p class="news-date">April 28, 2025</p>
             <h3 class="news-title">Cultural Festival Celebrates Local Heritage</h3>
-            <p class="news-excerpt">Annual festival showcasing traditional music, dance, and cuisine draws visitors from around the world.</p>
+            <p class="news-excerpt">Annual festival showcasing traditional music, dance, and cuisine draws visitors from
+              around the world.</p>
             <a href="#" class="read-more">Read More</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
- 
+
+
   <section id="tourism">
     <div class="section-content">
       <h2 class="section-title">Tourism Spots</h2>
-      <p class="section-description">Explore the breathtaking attractions that make Siargao a must-visit destination. From pristine beaches to hidden lagoons, there's something for everyone in our island paradise.</p>
-      
+      <p class="section-description">Explore the breathtaking attractions that make Siargao a must-visit destination.
+        From pristine beaches to hidden lagoons, there's something for everyone in our island paradise.</p>
+
       <div class="tourism-container">
         <div class="spot-card">
           <img src="sunset.jpg" alt="Cloud 9" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Cloud 9</h3>
-            <p class="spot-description">The iconic surf break that put Siargao on the world map. Perfect barrel waves attract surfers from around the globe.</p>
+            <p class="spot-description">The iconic surf break that put Siargao on the world map. Perfect barrel waves
+              attract surfers from around the globe.</p>
           </div>
         </div>
-        
+
         <div class="spot-card">
           <img src="sugba-lagoon.jpg" alt="Sugba Lagoon" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Sugba Lagoon</h3>
-            <p class="spot-description">A stunning emerald lagoon surrounded by limestone cliffs. Perfect for swimming, paddleboarding, and cliff diving.</p>
+            <p class="spot-description">A stunning emerald lagoon surrounded by limestone cliffs. Perfect for swimming,
+              paddleboarding, and cliff diving.</p>
           </div>
         </div>
-        
+
         <div class="spot-card">
           <img src="rock.jpg" alt="Magpupungko Rock Pools" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Magpupungko Rock Pools</h3>
-            <p class="spot-description">Natural tidal pools formed between rock formations, visible during low tide and perfect for swimming.</p>
+            <p class="spot-description">Natural tidal pools formed between rock formations, visible during low tide and
+              perfect for swimming.</p>
           </div>
         </div>
-        
+
         <div class="spot-card">
           <img src="mama.jpg" alt="Naked Island" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Naked Island</h3>
-            <p class="spot-description">A pristine white sandbar with no vegetation, offering 360-degree views of the crystal-clear ocean.</p>
+            <p class="spot-description">A pristine white sandbar with no vegetation, offering 360-degree views of the
+              crystal-clear ocean.</p>
           </div>
         </div>
-        
+
         <div class="spot-card">
           <img src="photo.jpg" alt="Daku Island" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Daku Island</h3>
-            <p class="spot-description">The largest of the three islands in the island hopping tour, known for its white sand beaches and seafood.</p>
+            <p class="spot-description">The largest of the three islands in the island hopping tour, known for its white
+              sand beaches and seafood.</p>
           </div>
         </div>
-        
+
         <div class="spot-card">
           <img src="Guyam.jpg" alt="Guyam Island" class="spot-img">
           <div class="spot-content">
             <h3 class="spot-title">Guyam Island</h3>
-            <p class="spot-description">A tiny tropical island with powdery white sand and palm trees, perfect for a peaceful getaway.</p>
+            <p class="spot-description">A tiny tropical island with powdery white sand and palm trees, perfect for a
+              peaceful getaway.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-   
+
+
   <section id="contact">
     <div class="section-content">
       <h2 class="section-title">Contact Us</h2>
-      <p class="section-description">Have questions or need assistance? We're here to help! Reach out to us through the form below or using our contact information.</p>
-      
+      <p class="section-description">Have questions or need assistance? We're here to help! Reach out to us through the
+        form below or using our contact information.</p>
+
       <div class="contact-container">
         <form class="contact-form">
           <div class="form-group">
             <label for="name" class="form-label">Your Name</label>
             <input type="text" id="name" class="form-input" placeholder="Enter your name">
           </div>
-          
+
           <div class="form-group">
             <label for="email" class="form-label">Email Address</label>
             <input type="email" id="email" class="form-input" placeholder="Enter your email">
           </div>
-          
+
           <div class="form-group">
             <label for="subject" class="form-label">Subject</label>
             <input type="text" id="subject" class="form-input" placeholder="Enter subject">
           </div>
-          
+
           <div class="form-group">
             <label for="message" class="form-label">Message</label>
             <textarea id="message" class="form-textarea" placeholder="Enter your message"></textarea>
           </div>
-          
+
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
-        
+
         <div class="contact-info">
           <div class="contact-item">
             <span class="contact-icon">📍</span>
             <span>Municipal Hall, General Luna, Siargao Island, Surigao del Norte, Philippines</span>
           </div>
-          
+
           <div class="contact-item">
             <span class="contact-icon">📞</span>
             <span> 0908-881-1022</span>
           </div>
-          
+
           <div class="contact-item">
             <span class="contact-icon">✉️</span>
             <span>info@siargao.gov.ph</span>
           </div>
-          
+
           <div class="contact-item">
             <span class="contact-icon">⏰</span>
             <span>Monday to Friday: 8:00 AM - 5:00 PM</span>
@@ -872,13 +903,22 @@
       </div>
     </div>
   </section>
-  
-   
+
+
   <a href="#home" class="back-to-top">↑</a>
-  
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-     
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if the user is logged in
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        // Redirect to the login page if not logged in
+        window.location.href = 'index.html';
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+
       const hamburger = document.querySelector('.hamburger');
       const navMenu = document.querySelector('.nav-menu');
       const overlay = document.querySelector('.overlay');
@@ -887,7 +927,7 @@
       const header = document.querySelector('.header');
       const backToTop = document.querySelector('.back-to-top');
 
-     
+
       function toggleMenu() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
@@ -895,11 +935,11 @@
         body.classList.toggle('no-scroll');
       }
 
-     
+
       hamburger.addEventListener('click', toggleMenu);
       overlay.addEventListener('click', toggleMenu);
 
-     
+
       menuItems.forEach(item => {
         item.addEventListener('click', () => {
           if (navMenu.classList.contains('active')) {
@@ -908,15 +948,15 @@
         });
       });
 
-     
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
 
-       
+
         if (window.scrollY > 500) {
           backToTop.classList.add('active');
         } else {
@@ -924,14 +964,14 @@
         }
       });
 
-     
+
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           if (this.getAttribute('href') !== '#') {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
               targetElement.scrollIntoView({
                 behavior: 'smooth',
@@ -942,40 +982,40 @@
         });
       });
 
-      
+
       const contactForm = document.querySelector('.contact-form');
       if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
           e.preventDefault();
-          
+
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
           const subject = document.getElementById('subject').value;
           const message = document.getElementById('message').value;
-          
+
           if (!name || !email || !subject || !message) {
             alert('Please fill in all fields');
             return;
           }
-          
+
           if (!isValidEmail(email)) {
             alert('Please enter a valid email address');
             return;
           }
-          
-          
+
+
           alert('Thank you for your message! We will get back to you soon.');
           contactForm.reset();
         });
       }
-      
-     
+
+
       function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
       }
 
-     
+
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -991,19 +1031,19 @@
         });
       }, observerOptions);
 
-      
+
       document.querySelectorAll('.section-content').forEach(el => {
         el.classList.add('fade-in-element');
         observer.observe(el);
       });
 
-      
+
       document.querySelectorAll('.spot-card, .news-card').forEach(el => {
         el.classList.add('fade-in-element');
         observer.observe(el);
       });
 
-      
+
       const style = document.createElement('style');
       style.textContent = `
         .fade-in-element {
@@ -1023,6 +1063,7 @@
       `;
       document.head.appendChild(style);
     });
-</script>
+  </script>
 </body>
+
 </html>
