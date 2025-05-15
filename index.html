@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Municipality Login</title>
   <link rel="stylesheet" href="web.css">
+  <!-- Include SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
   <div class="container">
     <h2>Login</h2>
-    <form action="Webhome.html">
+    <form>
       <div class="input-group">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Enter username" required />
@@ -18,9 +20,35 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter password" required />
       </div>
-        <button type="submit" class="submit-btn">Login</button>
-      </form>
-    </div>
-    <script src="web.js"></script>
-  </body>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+  <!-- Include SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if the user is already logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn === 'true') {
+            // Redirect to Webhome.html if already logged in
+            window.location.href = 'Webhome.html';
+        }
+
+        // Check if the user has logged out
+        const logoutMessage = localStorage.getItem('logoutMessage');
+        if (logoutMessage === 'true') {
+            // Display the SweetAlert2 logout message
+            Swal.fire({
+                icon: 'success',
+                title: 'Logged Out',
+                text: 'You have successfully logged out.',
+                confirmButtonText: 'OK'
+            });
+            // Remove the logoutMessage flag
+            localStorage.removeItem('logoutMessage');
+        }
+    });
+  </script>
+</body>
 </html>
